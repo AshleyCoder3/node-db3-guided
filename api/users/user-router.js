@@ -34,7 +34,11 @@ router.get("/:id", (req, res) => {
 });
 
 router.get("/:id/posts", async (req, res, next) => {
-  res.json(await User.getPostsBy(req.params.id))
+  try {
+    res.json(await User.getPostsBy(req.params.id))
+  } catch (err) {
+    next(err)
+  }
 })
 
 router.post("/", (req, res) => {
