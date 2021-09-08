@@ -13,7 +13,7 @@ module.exports = {
 
   async getUserBy(id) {
     const rows = await db('users as u')
-      .join('posts as p', 'p.user_id', '=', 'u.id') // the '=' is optional
+      .leftJoin('posts as p', 'p.user_id', '=', 'u.id') // the '=' is optional
       .select('p.id as post_id', 'contents', 'username', 'u.id as user_id')
       .where('u.id', id) // CAREFUL WITH AMBIGUOUS COLUMN NAMES
     // javascript time
