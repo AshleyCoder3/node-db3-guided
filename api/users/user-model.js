@@ -23,7 +23,7 @@ module.exports = {
       username: rows[0].username,
       posts: rows.map(r => ({
         contents: r.contents,
-        
+        post_id: r.post_id,
       })),
     }
     return result
