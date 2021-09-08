@@ -33,6 +33,10 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.get("/:id/posts", async (req, res, next) => {
+  
+})
+
 router.post("/", (req, res) => {
   const userData = req.body;
 
