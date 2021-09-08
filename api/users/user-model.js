@@ -21,7 +21,8 @@ module.exports = {
     const result = {
       user_id: rows[0].user_id,
       username: rows[0].username,
-      posts: []
+      posts: rows,
     }
+    return result
   }
 }
