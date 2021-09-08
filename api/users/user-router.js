@@ -34,7 +34,10 @@ router.get("/:id", (req, res) => {
 });
 
 router.get("/:id/posts", async (req, res, next) => {
-  
+  res.json([
+    { username: 'Hypatia', contents: 'foo', post_id: 1 },
+    { username: 'Hypatia', contents: 'foo', post_id: 1 },
+  ])
 })
 
 router.post("/", (req, res) => {
