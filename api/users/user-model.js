@@ -26,6 +26,7 @@ module.exports = {
         post_id: r.post_id,
       })),
     }
+
     return result
   }
 }
