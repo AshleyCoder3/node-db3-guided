@@ -12,6 +12,14 @@ module.exports = {
   },
 
   async getUserBy(id) {
-    
+    return {
+      user_id: 2,
+      username: 'Socrates',
+      posts: [
+        { post_id: 1, contents: 'foo' },
+        { post_id: 2, contents: 'bar' },
+        { post_id: 3, contents: 'fizz' },
+      ]
+    }
   }
 }

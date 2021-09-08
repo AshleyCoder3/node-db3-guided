@@ -14,18 +14,12 @@ router.get("/", (req, res, next) => {
     });
 });
 
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
-
-  res.json({
-    user_id: 2,
-    username: 'Socrates',
-    posts: [
-      { post_id: 1, contents: 'foo' },
-      { post_id: 2, contents: 'bar' },
-      { post_id: 3, contents: 'fizz' },
-    ]
-  })
+router.get("/:id", async (req, res, next) => {
+  try {
+    const 
+  } catch (err) {
+    next(err)
+  }
 });
 
 router.get("/:id/posts", async (req, res, next) => {
