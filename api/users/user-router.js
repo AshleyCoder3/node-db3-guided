@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
       res.json(users);
     })
     .catch(err => {
-      next({ message: "Failed to get users" });
+      next(err);
     });
 });
 
