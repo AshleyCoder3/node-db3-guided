@@ -12,12 +12,14 @@ module.exports = {
   },
 
   async getUserBy(id) {
+    // STEP 1 - BUILD IT IN RAW SQL
+    // STEP 2 - USE KNEX DOCS TO BUILD IT IN KNEX
     const rows = await db('users as u')
       .leftJoin('posts as p', 'p.user_id', '=', 'u.id') // the '=' is optional
       .select('p.id as post_id', 'contents', 'username', 'u.id as user_id')
       .where('u.id', id) // CAREFUL WITH AMBIGUOUS COLUMN NAMES
-    // javascript time
 
+    // STEP 3 - HAMMER THE ROWS INTO THE DESIRED SHAPE
     const result = { // this will not work for hypatia
       user_id: rows[0].user_id,
       username: rows[0].username,
