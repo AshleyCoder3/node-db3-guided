@@ -4,7 +4,7 @@ const db = require("../../data/db-config.js");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
+router.get("/", (req, res, next) => {
   db("users")
     .then(users => {
       res.json(users);
