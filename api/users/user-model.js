@@ -6,6 +6,8 @@ module.exports = {
     const result = await db('posts as p')
       .join('users as u', 'p.user_id', '=', 'u.id') // the '=' is optional
       .select('p.id as post_id', 'contents', 'username')
-      .where('id', user_id)
+      .where('u.id', user_id) // CAREFUL WITH AMBIGOUS COLUMNS
+
+    return result
   }
 }
