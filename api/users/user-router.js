@@ -19,7 +19,12 @@ router.get("/:id", (req, res) => {
 
   res.json({
     user_id: 2,
-    username: 'Socrates'
+    username: 'Socrates',
+    posts: [
+      { post_id: 1, contents: 'foo' },
+      { post_id: 2, contents: 'bar' },
+      { post_id: 3, contents: 'fizz' },
+    ]
   })
 });
 
