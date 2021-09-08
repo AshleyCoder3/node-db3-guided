@@ -17,20 +17,10 @@ router.get("/", (req, res, next) => {
 router.get("/:id", (req, res) => {
   const { id } = req.params;
 
-  db("users")
-    .where({ id })
-    .then(users => {
-      const user = users[0];
-
-      if (user) {
-        res.json(user);
-      } else {
-        res.status(404).json({ message: "Could not find user with given id." });
-      }
-    })
-    .catch(err => {
-      res.status(500).json({ message: "Failed to get user" });
-    });
+  res.json({
+    user_id: 2,
+    username: 'Socrates'
+  })
 });
 
 router.get("/:id/posts", async (req, res, next) => {
