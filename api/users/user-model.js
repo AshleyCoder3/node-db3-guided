@@ -9,5 +9,9 @@ module.exports = {
       .where('u.id', user_id) // CAREFUL WITH AMBIGUOUS COLUMN NAMES
 
     return result
+  },
+
+  async getUserBy(id) {
+    
   }
 }
