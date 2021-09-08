@@ -18,7 +18,7 @@ module.exports = {
       .where('u.id', id) // CAREFUL WITH AMBIGUOUS COLUMN NAMES
     // javascript time
 
-    const result = {
+    const result = { // this will not work for hypatia
       user_id: rows[0].user_id,
       username: rows[0].username,
       posts: rows.map(r => ({
