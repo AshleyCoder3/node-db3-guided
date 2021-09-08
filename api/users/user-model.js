@@ -12,14 +12,9 @@ module.exports = {
   },
 
   async getUserBy(id) {
-    return {
-      user_id: 2,
-      username: 'Socrates',
-      posts: [
-        { post_id: 1, contents: 'foo' },
-        { post_id: 2, contents: 'bar' },
-        { post_id: 3, contents: 'fizz' },
-      ]
-    }
+    const rows = await db('posts as p')
+      .join('users as u', 'p.user_id', '=', 'u.id') // the '=' is optional
+      .select('p.id as post_id', 'contents', 'username')
+      .where('u.id', id) // CAREFUL WITH AMBIGUOUS COLUMN NAMES
   }
 }
