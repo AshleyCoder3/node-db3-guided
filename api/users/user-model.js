@@ -16,7 +16,7 @@ module.exports = {
       .join('users as u', 'p.user_id', '=', 'u.id') // the '=' is optional
       .select('p.id as post_id', 'contents', 'username', 'u.id as user_id')
       .where('u.id', id) // CAREFUL WITH AMBIGUOUS COLUMN NAMES
-
+    // javascript time
     return rows
   }
 }
