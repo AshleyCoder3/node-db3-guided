@@ -17,6 +17,9 @@ module.exports = {
       .select('p.id as post_id', 'contents', 'username', 'u.id as user_id')
       .where('u.id', id) // CAREFUL WITH AMBIGUOUS COLUMN NAMES
     // javascript time
-    return rows
+
+    const result = {
+      user_id: rows[0].
+    }
   }
 }
